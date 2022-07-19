@@ -1,0 +1,24 @@
+1. Dado um vetor ordenado de qualquer tamanho e dois números "x" e "y" que pertencem a esse vetor,
+utilizando a busca sequencial, calcule quantos números existem entre "x" e "y".
+
+2. Faça a busca sequencial só que ao invés de começar a busca pelo primeiro elemento,
+comece a buscar pelo último.
+
+3. Faça uma busca sequencial que procure no inicio e no fim do vetor ao mesmo do tempo.
+Esse algoritmo irá buscar o número começando das suas extremidas e irá parar quando chegar no
+meio do vetor.
+
+4. Procure em uma String, quantas vezes um determinado caractere aparece.
+
+5. Procure em uma frase quantas vezes 2 vogais aparecem consecutivamente.
+Exemplo:
+INPUT: "Busca Sequencial eh muito daora"
+OUTPUT: 2
+
+6. Construa uma Struct Aluno com 2 campos:
+
+Nome: String
+Identidade: Int (3 dígitos)
+
+Utilizando um vetor de alunos construa uma base de dados de alunos e construa uma função para
+buscar o nome de um aluno sendo dada sua identidade.
