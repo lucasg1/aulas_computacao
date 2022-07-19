@@ -9,10 +9,10 @@ int busca_binaria(int x, int n, int v[]){
   int esquerda, meio, direita;
 
   // Colocamos esses valores iniciais de esquerda e direita para corrigir os casos de fronteira.
-  esquerda = -1;
-  direita = n;
+  esquerda = 0;
+  direita = n-1;
 
-  while(esquerda < direita){
+  while(esquerda <= direita){
     // enquanto a esquerda estiver na esquerda
     meio = (esquerda+direita)/2;
 
@@ -28,20 +28,20 @@ int busca_binaria(int x, int n, int v[]){
     }
     // Caso o meio não seja igual ao valor procurado:
     if (v[meio] < x){ // o valor procurado está a direita do meio
-      esquerda = meio;
+      esquerda = meio + 1;
     }
     else{ // o valor procurado está a esquerda do meio
-      direita = meio;
+      direita = meio - 1;
     }
   }
 
-  return direita;
+  return -1;
 }
 
 int main(){
   int v[8] = {1,3,8,24,25,31,66,334};
 
-  int posicaoBuscada = busca_binaria(1, 8, v);
+  int posicaoBuscada = busca_binaria(25, 8, v);
 
   cout << "O valor buscado está na posição: " << posicaoBuscada << endl;
 }
