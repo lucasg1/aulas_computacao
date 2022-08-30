@@ -1,8 +1,17 @@
-// Busca linear para achar um valor em um vetor
 #include <iostream>
+#include <string>
 using namespace std;
+/*
+Mude a busca binária para trabalhar com pesquisas em strings ao invés de inteiros.
 
-int busca_binaria(int x, int n, int v[]){
+Exemplo:
+{1,3,5,8,10}
+
+{"Aila", "Bruno", "Lucas", "Marcos", "Viviane"}
+
+As pesquisas devem ser feitas pelos nomes. "Marcos" deve retornar o índice 3.
+*/
+int busca_binaria(string x, int n, string nomes[]){
   // x é o valor buscado
   // n é o tamanho do vetor
   // v é o vetor
@@ -20,19 +29,19 @@ int busca_binaria(int x, int n, int v[]){
     // enquanto a esquerda estiver na esquerda
     meio = (esquerda+direita)/2; // (6+7)/2 = 6,5 ---> meio = 6
 
-    cout << "Esquerda = " << esquerda << endl;
-    cout << "Meio = " << meio << endl;
-    cout << "Direita = " << direita << endl;
+    cout << "Esquerda = " << nomes[esquerda] << endl; // 3 ---> vetor[3]: valor na posição 3
+    cout << "Meio = " << nomes[meio]<< endl;
+    cout << "Direita = " << nomes[direita] << endl;
     cout << endl;
 
     // meio, esquerda e direita são as posições
     // v[meio], v[esquerda] e v[direita] são os valores
-    if(v[meio] == x){
+    if(nomes[meio] == x){
       return meio; // Função para e retorna a posição
     }
     // Caso o meio não seja igual ao valor procurado:
-    if (v[meio] < x){ // o valor procurado está a direita do meio
-      esquerda = meio + 1;
+    if (nomes[meio] < x){ // o valor procurado está a direita do meio
+      esquerda = meio + 1; //
     }
     else{ // o valor procurado está a esquerda do meio
       direita = meio - 1;
@@ -42,10 +51,10 @@ int busca_binaria(int x, int n, int v[]){
   return -1;
 }
 
-int main(){
-  int v[8] = {1,3,8,24,25,31,66,334};
+int main(){ //       0       1      2       3        4
+  string nomes[] = {"aila","bruno","lucas","marcos","viviane"};
 
-  int posicaoBuscada = busca_binaria(66, 8, v);
+  int posicaoBuscada = busca_binaria("marcos",5, nomes);
 
   cout << "O valor buscado está na posição: " << posicaoBuscada << endl;
 }
